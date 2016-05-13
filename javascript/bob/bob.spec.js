@@ -85,7 +85,7 @@ describe('Bob', function() {
     expect(result).toEqual('Sure.');
   });
 
-  it('silence', function () {
+  xit('silence', function () {
     var result = bob.hey('');
     expect(result).toEqual('Fine. Be that way!');
   });
