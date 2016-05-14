@@ -1,25 +1,24 @@
-//still untested!
+//passes all tests.
 
 var Bob = function() {};
 
 Bob.prototype.hey = function(input) {
 
-    var silence = /^\s*$/,
-	shouting = /(^[A-Z\s]+.*$|^[^a-z]*!$)/, //is a problem
-	question = /?$/;
+    var taciturn = /^\s*$/,
+	shouting = /(^[A-Z\s]*.{0,1}$|^[^a-z]*!$)/,
+	question = /\?$/;
 
-    if (input.match(silence) == true) {
-	return "Fine, Be that way!";
-    } else if (input.match(shouting) == true) {
+    if (input.search(taciturn) !== -1) {
+	return "Fine. Be that way!";
+    } else if (input.search(shouting) !== -1) {
 	return "Whoa, chill out!";
-    } else if (input.match(question) == true) {
+    } else if (input.search(question) !== -1) {
 	return "Sure.";
-    } else {
-	return "Whatever.";
-    }
+    } else { return "Whatever."; }
+
 };
 
 module.exports = Bob;
 
-//Ok, the last one might have used RegEx but this one can't live 
-//without them.
+//Ok, the last one might have has a use for RegEx, 
+//but this one can't live without them.
