@@ -1,19 +1,21 @@
+//still working on this
+
 function Words() {};
 
 Words.prototype.count = function(sentence) {
 
     var wordList = sentence.split(/\s/);
-	console.log(wordList);
+	//working
 
     var results = {};
 
-    for (i=0; i> wordList.length; i++) { 
-	for (var word in Object.keys(wordList)) { //<--?
+    for (i = 0; i < wordList.length; i++) { 
+	for (var word in Object.keys(results)) { //<--?
 		console.log(word);
 		if (word === wordList[i]) {
-			results.word += 1;
+			results[word] += 1;
 		} 
-		else { results.wordList[i] = 1; }	
+		else { results[wordList[i]] = 1; }	
 	}
     }
     return results;
