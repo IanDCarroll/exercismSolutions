@@ -9,7 +9,7 @@ Words.prototype.count = function(sentence) {
     sentence = sentence.replace(/\s+$/,'');
 
     var wordList = sentence.split(/\s+/),
-	results = {};
+	results = Object.create(null);
 
     for (i = 0; i < wordList.length; i++) { 
 	if (results[(wordList[i])]) {
@@ -44,4 +44,12 @@ module.exports = Words;
  *
  *	thing[(newKey)] = newValue; 
  *	//==> { newKey : newValue }
+ * 
+ * What doesn't help 
+ * with handling properties that exist on Object's prototype:
+ *
+ * 1. Converting the word (property) to a string.
+ *	a. by passing object[String(word)]
+ *	b. by modifying the word to "word". That just breaks everything.
+ * 2. using Object.create(null) instead of {}.
  */
