@@ -4,9 +4,9 @@
 function Words() {};
 
 Words.prototype.count = function(sentence) {
-    sentence = sentence.toLowerCase();
-    sentence = sentence.replace(/^\s+/,'');
-    sentence = sentence.replace(/\s+$/,'');
+    sentence = sentence.toLowerCase()
+		       .replace(/^\s+/,'')
+		       .replace(/\s+$/,'');
 
     var wordList = sentence.split(/\s+/),
 	results = Object.create(null);

@@ -3,8 +3,9 @@
 function Gigasecond(startDate) {
 
     this.date = function() { 
-	var startDateMS = Date.parse(startDate),
-	    oneGSinMS = 1000000000000,
+	var startDateMS = Date.parse(startDate);
+	console.log(startDateMS);
+	var oneGSinMS = 1000000000000,
 	    gsAnivMS = startDateMS + oneGSinMS,
 	    gsAniv = new Date(gsAnivMS);
 	return gsAniv;
