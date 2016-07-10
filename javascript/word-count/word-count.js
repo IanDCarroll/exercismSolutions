@@ -1,6 +1,3 @@
-//still working on this
-//passes all but the last test now.
-
 function Words() {};
 
 Words.prototype.count = function(sentence) {
@@ -48,8 +45,13 @@ module.exports = Words;
  * What doesn't help 
  * with handling properties that exist on Object's prototype:
  *
- * 1. Converting the word (property) to a string.
+ *  Converting the word (property) to a string.
  *	a. by passing object[String(word)]
  *	b. by modifying the word to "word". That just breaks everything.
- * 2. using Object.create(null) instead of {}.
+
+ * What DOES help:
+ *  Using Object.create(null) instead of {}.
+ * 	This creates a JS object that does not inherit from 
+ *	Object.Prototype. 
+ *	Since it has NO methods, NO reserved words.
  */
