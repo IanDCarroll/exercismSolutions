@@ -1,10 +1,7 @@
-function leap(year) { 
+class leap(year) { 
     this.isLeap = function() {
 
-	if (year % 400 === 0) { return true; } 
-	else if (year % 100 === 0) { return false; } 
-	else if (year % 4 === 0) { return true; }
-	else { return false; }
+	return ((year % 400 === 0)||(year % 4 === 0));
 
     }
 }
@@ -22,4 +19,8 @@ module.exports = leap;
  *	The this function only needs ().
  * 6. Most of this is thanks to seeing a successful example 
  * 	by https://github.com/christinejavier. Thanks Christine!
+ * 7. Additional refactoring with Alex Caruntu @ Star West conference.
+ *      It never occured to me that just using return will return true, 
+ *      and otherwise return false. This really simplified the function!
+ *      Thanks Alex! Great pairing with you!
  */
